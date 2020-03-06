@@ -30,30 +30,30 @@ def canvasData(**kwrgs):
     with open("resize_imgs/"+file_name, "wb") as fh:
         fh.write(base64.decodebytes(image_encoded.encode('utf-8')))
 
-    # img = Image.open('imageToSave.png')
-    # img.thumbnail((28,28), Image.ANTIALIAS)
-    # file_name = datetime.now().strftime('%Y%m%d%H%M%S')+'.png'
-    # img.save("resize_imgs/"+file_name,)
+    img = Image.open('imageToSave.png')
+    img.thumbnail((28,28), Image.ANTIALIAS)
+    file_name = datetime.now().strftime('%Y%m%d%H%M%S')+'.png'
+    img.save("resize_imgs/"+file_name,)
 
     
-    # Prediction code
-    # load the image
-    # img = load_img("resize_imgs/"+file_name, color_mode = "grayscale", 
-    #                target_size=(28, 28))
+    #Prediction code
+    #load the image
+    img = load_img("resize_imgs/"+file_name, color_mode = "grayscale", 
+                   target_size=(28, 28))
 
-    # img = img_to_array(img)
-    # # reshape into a single sample with 1 channel
-    # img = img.reshape(1, 28, 28, 1)
-    # # prepare pixel data
-    # img = img.astype('float32')
-    # img = img / 255.0
+    img = img_to_array(img)
+    # reshape into a single sample with 1 channel
+    img = img.reshape(1, 28, 28, 1)
+    # prepare pixel data
+    img = img.astype('float32')
+    img = img / 255.0
 
-    # model = load_model('final_model.h5')
-    # # predict the class
-    # digit = model.predict_classes(img)
+    model = load_model('final_model.h5')
+    # predict the class
+    digit = model.predict_classes(img)
 
     count = len([iq for iq in scandir('resize_imgs')])
-    digit = [1]
+    # digit = [1]
     return {'digit': str(digit[0]), 'count':count}
 
 @app.route('/project_description')
@@ -62,4 +62,4 @@ def project_description():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, threaded=False)
+    app.run(debug=False, threaded=False)

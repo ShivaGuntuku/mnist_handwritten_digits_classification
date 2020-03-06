@@ -1,0 +1,26 @@
+html, body {
+    overflow-x: hidden;
+}
+.canvas-box {
+	margin: auto;
+  	border: 3px solid  #2ec5cc;
+	display: block;
+}
+canvas{
+	background: black;
+}
+.nav-item{
+	font-size: 16px bold;
+	color: #fff !important;
+}
+.navbar-nav{
+	padding-right: 100px;
+}
+.navbar-brand{
+	padding-left: 50px;
+}
+/*footer{
+	margin-top: 61px;
+	padding: 10px;
+	background: #111;
+}*/

@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="container">
+  <canvas id="canvas" class="canvas-box">
+    Sorry, your browser is rubbish.
+  </canvas>
+
+  <div class="row">
+    <div class="col-sm-12 text-center">
+      <button class="btn btn-primary" onclick="downloadImage()">Send</button>
+      &nbsp;
+      <button class="btn btn-success" onclick="clearCanvas()">Reset</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <h5>The Deep Learning Model Detected Digit Is:
+      <span id="output_digit"></span></h5>
+    <h6>Model Usage Counter: <span id="counter">{{data['count']}}</span></h6>
+    <small>Note **: Sometimes this model predicts wrong digits, i'm trying to improve the Accuracy of the model, from your given inputs.</small>
+  </div>
+</div>
+{% endblock %}

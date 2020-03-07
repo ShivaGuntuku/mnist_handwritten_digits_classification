@@ -30,10 +30,10 @@ def canvasData(**kwrgs):
     with open("resize_imgs/"+file_name, "wb") as fh:
         fh.write(base64.decodebytes(image_encoded.encode('utf-8')))
 
-    img = Image.open('imageToSave.png')
-    img.thumbnail((28,28), Image.ANTIALIAS)
-    file_name = datetime.now().strftime('%Y%m%d%H%M%S')+'.png'
-    img.save("resize_imgs/"+file_name,)
+    # img = Image.open('imageToSave.png')
+    # img.thumbnail((28,28), Image.ANTIALIAS)
+    # file_name = datetime.now().strftime('%Y%m%d%H%M%S')+'.png'
+    # img.save("resize_imgs/"+file_name,)
 
     
     #Prediction code
